@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/comparisonPage.css">
+</head>
+
+<body>
+    <header> Select the beggest result or click equals</header>
+    <div> <span class="player"></span> your turn </div>
+        <div class="timer"></div>
+    <button id="mainBtn"> Click to start </button>
+    <div class="eq1"></div>
+    <div class="eq2"></div>
+    <div class="eq3"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            var count= 0 ; 
+        if(count==0){
+            $(".player").text(sessionStorage.getItem("player1"))
+        }
+        if(count==1){
+            $(".player").text(sessionStorage.getItem("player2"))
+        }
+        console.log("count")
+            $(window).on("unload", function () {
+                localStorage.clear();
+            })
+            var x,y,z,a, equ1,equ2;
+
+            $("button").click(function () {
+                count++; 
+                $("#mainBtn").hide()
+                var start = 15;
+                var score1 = 0;
+
+                var createRandom=function(){
+                x = Math.floor(Math.random() * 12);
+                y = Math.floor(Math.random() * 12);
+                z = Math.floor(Math.random() * 12);
+                a = Math.floor(Math.random() * 12);
+                console.log("inside random")
+                 equ1 = x + y;
+                 equ2 = z + a;
+                $(".eq1").html("<button>" + x + "+" + y + "</button>").css({"border-radius": "5px", "backgroung-color":"white"}).show();
+                $(".eq2").html("<button>" + z + "+" + a + "</button>").css("border-radius", "5px").show();
+                $(".eq3").html("<button> Equals </button>").css("border-radius", "5px").show();
+                }
+                createRandom();
+                $('.timer').show();
+
+                $(".eq1").click(function () {
+
+                if (equ1 > equ2) {
+                    console.log("correct")
+                    score1++;
+                    console.log(score1)
+                }
+                else {
+                    console.log("false")
+                    $(this).css("background-color", "red")
+                }
+                createRandom();
+            });
+
+            $(".eq2").click(function () {
+                if (equ2 > equ1) {
+                    console.log("correct")
+                    score1++
+                    console.log(score1)
+                }
+                else {
+                    console.log("false")
+                    $(this).css("background-color", "red")
+                }
+                createRandom();
+            });
+
+            $(".eq3").click(function () {
+                if (equ1 == equ2) {
+                    console.log("correct")
+                    score1++
+                    console.log(score1)
+                }
+                else {
+                    console.log("false")
+                    $(this).css("background-color", "red")
+                }
+                createRandom();
+            });
+            var myVar = setInterval(function () {
+                    if (start==0){
+                        $("#mainBtn").show()
+                        clearInterval(myVar)
+                        console.log("here")
+                        $(".eq1").hide() 
+                        $(".eq2").hide()
+                        $(".eq3").hide()
+                        $('.timer').hide();
+                        stop();
+                    }
+                    $('.timer').text(start-- + " Seconds");
+                }, 1000);
+            })
+
+            // $(".eq1").click(function () {
+            //     console.log("hiii")
+            //     if (equ1 > equ2) {
+            //         console.log("correct")
+            //         score1++;
+            //     }
+            //     else {
+            //         console.log("false")
+            //         $(this).css("background-color", "red")
+            //     }
+            // });
+
+            // $(".eq2").click(function () {
+            //     if (equ2 > equ2) {
+            //         console.log("correct")
+            //         score1++
+            //     }
+            //     else {
+            //         console.log("false")
+            //         $(this).css("background-color", "red")
+            //     }
+            // });
+
+            // $(".eq3").click(function () {
+            //     if (equ1 == equ2) {
+            //         console.log("correct")
+            //         score1++
+            //     }
+            //     else {
+            //         console.log("false")
+            //         $(this).css("background-color", "red")
+            //     }
+            // });
+            // const createRandom = function () {
+            //     var x = Math.floor(Math.random() * 12);
+            //     var y = Math.floor(Math.random() * 12);
+            //     var z = Math.floor(Math.random() * 12);
+            //     var a = Math.floor(Math.random() * 12);
+
+            //     var equ1 = x + y;
+            //     var equ2 = z + a;
+
+            //     var beggest;
+            //     $(".eq1").html("<button>" + x + "+" + y + "</button>").css("border-radius", "5px");
+            //     $(".eq2").html("<button>" + z + "+" + a + "</button>").css("border-radius", "5px");
+            //     $(".eq3").html("<button> Equals </button>").css("border-radius", "5px");
+            // }
+        });
+    </script>
+</body>
+
+</html>

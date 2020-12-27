@@ -1,0 +1,29 @@
+body{
+    display: grid;
+    justify-items: center ;
+    grid-template-columns: auto;
+    grid-gap: 20px;
+    justify-content: space-around;
+    
+}
+button{
+    height: 100px;
+    width: 200px;
+    background-color: #66977d;
+    border-radius: 30%;
+    outline: none;
+}
+.btn{
+    margin-top: 200px;
+}
+header{
+    text-align: center;
+    font-size: 25pt;
+    font-family: "Comic Sans MS", "Comic Sans", "cursive";
+    margin: 30px;
+    color: #66977d;
+}
+.player{
+ color: blueviolet;
+ font-family: "Comic Sans MS", "Comic Sans", "cursive";;
+}
