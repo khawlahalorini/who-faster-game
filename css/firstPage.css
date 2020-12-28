@@ -12,6 +12,12 @@ input{
     height: 25px;
     width: 20%;
     outline: none;
+    display: block;
+}
+form{
+    height: 25px;
+    width: 100%;
+    margin-left: 70%;
 }
 button{
     margin-top: 20px;

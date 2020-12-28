@@ -4,14 +4,16 @@ body{
     grid-template-columns: auto;
     grid-gap: 20px;
     justify-content: space-around;
-    
+    font-family: "Comic Sans MS", "Comic Sans", "cursive";
 }
 button{
     height: 100px;
     width: 200px;
-    background-color: #66977d;
     border-radius: 30%;
     outline: none;
+    background-color: #66977d;
+    font-family: "Comic Sans MS", "Comic Sans", "cursive";
+    font-size: 20px;
 }
 .btn{
     margin-top: 200px;
@@ -26,4 +28,24 @@ header{
 .player{
  color: blueviolet;
  font-family: "Comic Sans MS", "Comic Sans", "cursive";;
+}
+.design{
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    height: 70px;
+    width: 200px;
+    border-radius: 30%;
+}
+#design1{
+    background-color: #32b1cc;
+
+}
+#design2{
+    background-color: #e9686a; 
+
+}
+#design3{
+    background-color: #f49e21;
+
 }
