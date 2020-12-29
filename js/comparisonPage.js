@@ -82,8 +82,8 @@ $(document).ready(function () {
                         sessionStorage.getItem("score2") +
                         "</div>").css("font-size", "30px");
                     $(".result").append("<br><div>" + result() + "</div><br><button> <a href=" +
-                     "/html/comparisonPage.html" + "> Another round </button>" 
-                     + "<button> <a href=" + "/html/firstPage.html" + "> New game </button>")
+                     "../html/comparisonPage.html" + "> Another round </button>" 
+                     + "<button> <a href=" + "../html/firstPage.html" + "> New game </button>")
                 }
                 stop();
             }

@@ -15,9 +15,9 @@ $(document).ready(function () {
         function () {
             $(this).css("filter", "blur(3px)")
         })
-        
+
     $(".comparison").click(function(){
-        window.location.replace("/html/comparisonPage.html")
+        window.location.replace("../html/comparisonPage.html")
     })
 
 
