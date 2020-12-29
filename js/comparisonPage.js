@@ -8,7 +8,6 @@ $(document).ready(function () {
 
     $("button").click(function () {
         if (count == 0) {
-            console.log("count0")
             $(".player").text(sessionStorage.getItem("player1") + " your turn")
         }
         count++;
@@ -70,7 +69,6 @@ $(document).ready(function () {
                 if (count == 1) {
                     sessionStorage.setItem("score1", score);
                     $(".player").text(sessionStorage.getItem("player2") + " your turn")
-                    console.log("count1")
                 }
                 if (count == 2) {
                     sessionStorage.setItem("score2", score);
