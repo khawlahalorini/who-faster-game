@@ -76,23 +76,29 @@ $(document).ready(function () {
                     sessionStorage.setItem("score2", score);
                     $("#mainBtn").hide()
                     $(".player").hide()
-                    $(".result").text("Congratulations " + result()).css("font-size","120px");
+                    $(".result").append('<br><div class="toggle">' + sessionStorage.getItem("player1") +
+                        " your score is " + sessionStorage.getItem("score1") + "<br>" +
+                        sessionStorage.getItem("player2") + " your score is " +
+                        sessionStorage.getItem("score2") +
+                        "</div>").css("font-size", "30px");
+                    $(".result").append("<br><div>" + result() + "</div><br><button> <a href=" +
+                     "/html/comparisonPage.html" + "> Another round </button>" 
+                     + "<button> <a href=" + "/html/firstPage.html" + "> New game </button>")
                 }
                 stop();
             }
             $('.timer').text(start-- + " Seconds");
         }, 1000);
     })
- result=function(){
-    if ( sessionStorage.getItem("score1")> sessionStorage.getItem("score2")){
-        return sessionStorage.getItem("player1") 
+    result = function () {
+        if (sessionStorage.getItem("score1") > sessionStorage.getItem("score2")) {
+            return sessionStorage.getItem("player1") + " Congratulations You win "
+        }
+        else if (sessionStorage.getItem("score1") < sessionStorage.getItem("score2")) {
+            return sessionStorage.getItem("player2") + " Congratulations You win "
+        }
+        else {
+            return "you are equals"
+        }
     }
-    else if ( sessionStorage.getItem("score1")< sessionStorage.getItem("score2")){
-        return sessionStorage.getItem("player2") 
-    }
-    else{
-        return "you are equals"
-    }
- }
-
 });

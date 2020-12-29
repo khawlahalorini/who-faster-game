@@ -63,11 +63,14 @@ For upload and hosting the project.
 
 #### Wireframes
 
-![alt page1](https://i.imgur.com/JUuJuCL.png)
+![alt page1](assets/Page_1.png)
 
-![alt page2](https://i.postimg.cc/VL5bsF4j/Page-2.png)
+![alt page2](assets/Page_2.png)
 
-![alt page3](https://i.postimg.cc/3rzDRvqV/Page-3.png)
+![alt page3](assets/startPage.png)
+
+![alt page3](assets/Page_3.png)
+
 
 #### User stories
 
